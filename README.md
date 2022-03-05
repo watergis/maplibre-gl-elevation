@@ -5,7 +5,7 @@
 ![](https://github.com/watergis/maplibre-gl-elevation/workflows/Node.js%20Package/badge.svg)
 ![GitHub](https://img.shields.io/github/license/watergis/maplibre-gl-elevation)
 
-This module adds elevation control to maplibre-gl.  It was forked from [mapbox-gl-elevation](https://github.com/watergis/mapbox-gl-export).
+This module adds elevation control to maplibre-gl.  It was forked from [mapbox-gl-elevation](https://github.com/watergis/mapbox-gl-elevation).
 
 ## Installation:
 
