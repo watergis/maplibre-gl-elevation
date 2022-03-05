@@ -1,35 +1,35 @@
-# mapbox-gl-elevation
-![](https://github.com/watergis/mapbox-gl-elevation/workflows/build/badge.svg)
-![](https://github.com/watergis/mapbox-gl-elevation/workflows/deploy%20gh-pages/badge.svg)
-![](https://github.com/watergis/mapbox-gl-elevation/workflows/Release%20Draft/badge.svg)
-![](https://github.com/watergis/mapbox-gl-elevation/workflows/Node.js%20Package/badge.svg)
-![GitHub](https://img.shields.io/github/license/watergis/mapbox-gl-elevation)
+# maplibre-gl-elevation
+![](https://github.com/watergis/maplibre-gl-elevation/workflows/build/badge.svg)
+![](https://github.com/watergis/maplibre-gl-elevation/workflows/deploy%20gh-pages/badge.svg)
+![](https://github.com/watergis/maplibre-gl-elevation/workflows/Release%20Draft/badge.svg)
+![](https://github.com/watergis/maplibre-gl-elevation/workflows/Node.js%20Package/badge.svg)
+![GitHub](https://img.shields.io/github/license/watergis/maplibre-gl-elevation)
 
-This module adds elevation control to mapbox-gl.
+This module adds elevation control to maplibre-gl.  It was forked from [mapbox-gl-elevation](https://github.com/watergis/mapbox-gl-export).
 
 ## Installation:
 
 ```bash
-npm i @watergis/mapbox-gl-elevation --save
+npm i @watergis/maplibre-gl-elevation --save
 ```
 
 ## Demo:
 
 Try [codesandbox](https://codesandbox.io/s/mapbox-gl-elevation-cldfe).
 
-See [demo](https://watergis.github.io/mapbox-gl-elevation).
+See [demo](https://watergis.github.io/maplibre-gl-elevation).
 
 ![demo](./demo.gif)
 
 ## Usage:
 
 ```ts
-import MapboxElevationControl from "@watergis/mapbox-gl-elevation";
-import '@watergis/mapbox-gl-elevation/css/styles.css';
-import mapboxgl from 'mapbox-gl';
+import MaplibreElevationControl from "@watergis/maplibre-gl-elevation";
+import '@watergis/maplibre-gl-elevation/css/styles.css';
+import maplibregl from 'maplibre-gl';
 
-const map = new mapboxgl.Map();
-map.addControl(new MapboxElevationControl(
+const map = new maplibregl.Map();
+map.addControl(new MaplibreElevationControl(
         'https://wasac.github.io/rw-terrain/tiles/{z}/{x}/{y}.png',
         { 
           font: ['Roboto Medium'],
@@ -83,4 +83,4 @@ git push origin main --tag
 
 ## Contribution
 
-This Mapbox GL Elevation Control is still under development. so most welcome any feedbacks and pull request to this repository.
+This Maplibre GL Elevation Control is still under development. so most welcome any feedbacks and pull request to this repository.

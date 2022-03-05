@@ -1,7 +1,7 @@
 {
-  "name": "@watergis/mapbox-gl-elevation",
+  "name": "@watergis/maplibre-gl-elevation",
   "version": "1.0.5",
-  "description": "This module adds elevation control to mapbox-gl.",
+  "description": "This module adds elevation control to maplibre-gl.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -18,22 +18,23 @@
   },
   "keywords": [
     "mapbox",
-    "mapbox-gl-js",
+    "maplibre-gl-js",
     "elevation",
     "terrain-rgb"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/watergis/mapbox-gl-elevation.git"
+    "url": "git+https://github.com/watergis/maplibre-gl-elevation.git"
   },
   "author": "Jin IGARASHI",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/watergis/mapbox-gl-elevation/issues"
+    "url": "https://github.com/watergis/maplibre-gl-elevation/issues"
   },
-  "homepage": "https://github.com/watergis/mapbox-gl-elevation#readme",
+  "homepage": "https://github.com/watergis/maplibre-gl-elevation#readme",
   "devDependencies": {
-    "@types/mapbox-gl": "^1.13.1",
+    "@types/geojson": "^7946.0.8",
+    "@types/maplibre-gl": "^1.14.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "css-loader": "^5.0.1",
@@ -53,6 +54,6 @@
   "dependencies": {
     "@turf/distance": "^6.2.0",
     "@watergis/terrain-rgb": "^1.1.5",
-    "mapbox-gl": "^1.13.1"
+    "maplibre-gl": "^2.1.7"
   }
 }

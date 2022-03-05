@@ -1,4 +1,9 @@
-import { IControl, Map as MapboxMap, Marker } from 'mapbox-gl';
+import {
+  ControlPosition,
+  IControl,
+  Map as MaplibreMap,
+  Marker,
+} from 'maplibre-gl';
 import distance from '@turf/distance';
 import { TerrainRGB } from '@watergis/terrain-rgb';
 
@@ -32,10 +37,10 @@ type Options = {
  * @param {String} [options.fontHalo='1'] - Label font halo
  */
 
-export default class MapboxElevationControl implements IControl {
+export default class MaplibreElevationControl implements IControl {
     private container: HTMLElement;
 
-    private map?: MapboxMap;
+    private map?: MaplibreMap;
 
     private measureButton: HTMLButtonElement;
 
@@ -79,19 +84,19 @@ export default class MapboxElevationControl implements IControl {
       this.isQuery = false;
     }
 
-    public getDefaultPosition(): string {
+    public getDefaultPosition(): ControlPosition {
       const defaultPosition = 'top-right';
       return defaultPosition;
     }
 
-    public onAdd(map: MapboxMap): HTMLElement {
+    public onAdd(map: MaplibreMap): HTMLElement {
       this.map = map;
       this.container = document.createElement('div');
-      this.container.classList.add('mapboxgl-ctrl');
-      this.container.classList.add('mapboxgl-ctrl-group');
-      this.container.classList.add('mapboxgl-elevation-list');
+      this.container.classList.add('maplibregl-ctrl');
+      this.container.classList.add('maplibregl-ctrl-group');
+      this.container.classList.add('maplibregl-elevation-list');
       this.measureButton = document.createElement('button');
-      this.measureButton.classList.add('mapboxgl-elevation-measure-button');
+      this.measureButton.classList.add('maplibregl-elevation-measure-button');
       this.measureButton.setAttribute('type', 'button');
       this.measureButton.addEventListener('click', () => {
         if (this.isQuery) {
@@ -103,7 +108,7 @@ export default class MapboxElevationControl implements IControl {
       this.container.appendChild(this.measureButton);
 
       this.clearButton = document.createElement('button');
-      this.clearButton.classList.add('mapboxgl-elevation-clear-button');
+      this.clearButton.classList.add('maplibregl-elevation-clear-button');
       this.clearButton.style.display = 'none';
       this.clearButton.setAttribute('type', 'button');
       this.clearButton.addEventListener('click', () => {
@@ -113,7 +118,7 @@ export default class MapboxElevationControl implements IControl {
       this.container.appendChild(this.clearButton);
 
       this.downloadButton = document.createElement('button');
-      this.downloadButton.classList.add('mapboxgl-elevation-download-button');
+      this.downloadButton.classList.add('maplibregl-elevation-download-button');
       this.downloadButton.style.display = 'none';
       this.downloadButton.setAttribute('type', 'button');
       this.downloadButton.addEventListener('click', () => {
@@ -137,11 +142,6 @@ export default class MapboxElevationControl implements IControl {
 
     download(fileName, content) {
       const blob = new Blob([content], { type: 'text/plain' });
-      const CAN_USE_SAVE_BLOB = window.navigator.msSaveBlob !== undefined;
-      if (CAN_USE_SAVE_BLOB) {
-        window.navigator.msSaveBlob(blob, fileName);
-        return;
-      }
       const aTag = document.createElement('a');
       aTag.href = URL.createObjectURL(blob);
       aTag.setAttribute('download', fileName);
