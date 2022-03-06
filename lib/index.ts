@@ -12,7 +12,7 @@ const LAYER_LINE = 'elev-controls-layer-line';
 const LAYER_SYMBOL = 'elev-controls-layer-symbol';
 const SOURCE_SYMBOL = 'elev-controls-source-symbol';
 
-type Options = {
+export type Options = {
   tileSize: number;
   font: string[];
   fontSize: number;
