@@ -1,6 +1,6 @@
 {
   "name": "@watergis/maplibre-gl-elevation",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This module adds elevation control to maplibre-gl.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
